@@ -6,7 +6,7 @@ BEGIN
     ps = v1[0]*v2[0] + v1[1]*v2[1]
     RETURN ps
 END
-PROCEDURE isOrthogonal(v1[],v2[])
+PROCEDURE areOrthogonal(v1[],v2[])
 VAR
     ps : INTEGER
 BEGIN
@@ -29,6 +29,20 @@ BEGIN
     ps = dot_product(v1,v2)
     write("The PS of v1 and v2 is :" + ps)
 
-    isOrthogonal(v1,v2)
 
+END
+ALGORITHM  IfORTHOGONAL
+VAR
+    v1[,] : INTEGER;
+    v2[,] : INTEGER;
+    n[] : [,];
+BEGIN
+    read(n[][])  // Abreviation to read all couple of vectors and put them on a array of arrays(vectors)
+    FOR i FROM 0 TO n.length -1 STEP 1  DO
+            v1[] = n[i][0]
+            v2[] = n[i][1]
+
+        reOrthogonal(v1,v2)
+
+    END_FOR
 END
