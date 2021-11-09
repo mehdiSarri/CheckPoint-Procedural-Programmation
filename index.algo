@@ -1,0 +1,34 @@
+
+FUNCTION dot_product (v1[],v2) : INTEGER
+VAR
+    ps : INTEGER
+BEGIN
+    ps = v1[0]*v2[0] + v1[1]*v2[1]
+    RETURN ps
+END
+PROCEDURE isOrthogonal(v1[],v2[])
+VAR
+    ps : INTEGER
+BEGIN
+    IF (dot_product(v1,v2) = 0) THEN
+        write("v1 and v2 are orthogonals")
+    ELSE
+        write("v1 and v2 are not orthogonals")
+    END_IF
+END
+
+ALGORITHM Dot product
+VAR
+    ps : INTEGER;
+    v1[] : INTEGER;
+    v2[] : INTEGER;
+BEGIN
+    read(v1)
+    read(v2)
+
+    ps = dot_product(v1,v2)
+    write("The PS of v1 and v2 is :" + ps)
+
+    isOrthogonal(v1,v2)
+
+END
